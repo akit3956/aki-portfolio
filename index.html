@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aki — Founder & CEO, Aki Labs</title>
+<meta name="description" content="教える人から、AIで教える仕組みを作る人へ。日本語教師の経験を、コードで世界中の学習者に届ける Aki Labs の創業者ポートフォリオ。" />
+<meta name="theme-color" content="#0a0e1a" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aki — Founder & CEO, Aki Labs" />
+<meta property="og:description" content="教える人から、AIで教える仕組みを作る人へ。日本語教師の経験を、コードで世界中の学習者に届ける Aki Labs の創業者ポートフォリオ。" />
+<meta property="og:image" content="aki-illustration.jpg" />
+<meta property="og:site_name" content="Aki Labs" />
+<meta property="og:locale" content="ja_JP" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aki — Founder & CEO, Aki Labs" />
+<meta name="twitter:description" content="教える人から、AIで教える仕組みを作る人へ。" />
+<meta name="twitter:image" content="aki-illustration.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg-2: #131826;
+    --bg-3: #1c2333;
+    --bg-glass: rgba(20, 26, 42, 0.7);
+    --accent: #00d9ff;
+    --accent-glow: rgba(0, 217, 255, 0.18);
+    --amber: #ffb547;
+    --pink: #ff5572;
+    --text: #e8ecf4;
+    --text-soft: #a4adc4;
+    --text-mute: #6b7494;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.16);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  /* Subtle grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    top: -300px; left: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  main { position: relative; z-index: 1; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; position: relative; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .serif { font-family: 'Noto Serif JP', serif; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 14, 26, 0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .container {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 18px; padding-bottom: 18px;
+  }
+  nav .logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900; font-size: 20px; letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  nav .logo .dot {
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+  }
+  nav .logo .accent { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a {
+    text-decoration: none; color: var(--text-soft);
+    font-size: 13px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 140px 0 120px; position: relative; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-portrait {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+      0 20px 60px rgba(0,0,0,0.5),
+      0 0 60px var(--accent-glow);
+  }
+  .hero-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-portrait .placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 24px;
+    color: var(--text-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .hero-portrait .placeholder .icon {
+    font-size: 38px;
+    margin-bottom: 14px;
+    opacity: 0.6;
+  }
+  .hero-portrait .caption {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--text-soft);
+  }
+  .hero-portrait .caption .accent { color: var(--amber); }
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-portrait { max-width: 380px; margin: 0 auto; }
+  }
+  .hero-status {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--line-strong);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-bottom: 28px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+  }
+  .hero-status .pulse {
+    width: 8px; height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(42px, 7vw, 84px);
+    line-height: 1.08;
+    margin-bottom: 32px;
+    letter-spacing: -1px;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--accent) 0%, #7df9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h1 .amber { color: var(--amber); }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 720px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+  .tag {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: var(--text-soft);
+    font-weight: 500;
+  }
+  .tag.cyan { color: var(--accent); border-color: rgba(0,217,255,0.3); }
+  .tag.amber { color: var(--amber); border-color: rgba(255,181,71,0.3); }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    max-width: 800px;
+  }
+  .hero-meta-item .label {
+    font-size: 11px; letter-spacing: 2px;
+    color: var(--text-mute); font-weight: 500;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .hero-meta-item .value {
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Section base */
+  section { padding: 100px 0; position: relative; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 2px;
+    color: var(--accent); font-weight: 500;
+    text-transform: uppercase; margin-bottom: 18px;
+  }
+  .section-label::before {
+    content: ''; width: 24px; height: 1px; background: var(--accent);
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4.5vw, 48px);
+    margin-bottom: 56px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+  .section-title .accent { color: var(--accent); }
+  .section-title .amber { color: var(--amber); }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about p {
+    color: var(--text-soft);
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+  .about strong { color: var(--text); font-weight: 700; }
+  .about .highlight { color: var(--accent); font-weight: 500; }
+  .profile-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .profile-card h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    letter-spacing: 1px;
+  }
+  .profile-card dl { display: grid; gap: 16px; position: relative; }
+  .profile-card dt {
+    font-size: 11px; letter-spacing: 2px;
+    color: var(--text-mute); font-weight: 500;
+    text-transform: uppercase;
+  }
+  .profile-card dd {
+    font-size: 15px;
+    color: var(--text);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  /* Off-hours / Personal */
+  .off-hours {
+    background:
+      radial-gradient(ellipse at top right, rgba(255,181,71,0.06) 0%, transparent 50%),
+      var(--bg);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .hobby-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .hobby-card {
+    background: linear-gradient(135deg, var(--bg-2) 0%, rgba(255,181,71,0.04) 100%);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .hobby-card:hover {
+    border-color: rgba(255,181,71,0.4);
+    transform: translateY(-3px);
+  }
+  .hobby-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(255,181,71,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hobby-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-3);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    position: relative;
+  }
+  .hobby-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .hobby-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .hobby-card p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.75;
+    position: relative;
+  }
+  @media (max-width: 720px) {
+    .hobby-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Pilgrimage Gallery */
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 64px 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .gallery-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    letter-spacing: 2px;
+  }
+  .gallery-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+    background: var(--bg-3);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover {
+    border-color: rgba(255,181,71,0.5);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-item figcaption {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10,14,26,0.92) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    color: white;
+    pointer-events: none;
+  }
+  .gallery-item .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--amber);
+    margin-bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .gallery-item.shakyo .cat { color: #c8a063; }
+  .gallery-item .name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .gallery-item .loc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  @media (max-width: 880px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Aki Labs (Company section) */
+  .lab { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%); }
+  .lab-intro {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 760px;
+    margin-bottom: 56px;
+    line-height: 1.85;
+  }
+  .lab-intro strong {
+    color: var(--accent); font-weight: 600;
+  }
+
+  /* Org Chart */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 64px;
+    position: relative;
+  }
+  .org-ceo {
+    background: linear-gradient(135deg, var(--bg-3) 0%, var(--bg-2) 100%);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 40px var(--accent-glow);
+    border-radius: 14px;
+    padding: 24px 48px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .org-ceo .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .org-ceo .name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .org-ceo .sub {
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-top: 4px;
+  }
+  .org-line {
+    width: 2px; height: 40px;
+    background: linear-gradient(to bottom, var(--accent), var(--line-strong));
+  }
+  .org-departments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    position: relative;
+  }
+  .ai-dept {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 20px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-dept:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,217,255,0.1);
+  }
+  .ai-dept::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+  .ai-dept .icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-3);
+    border-radius: 8px;
+  }
+  .ai-dept .name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .ai-dept .role {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .ai-dept .desc {
+    font-size: 12px;
+    color: var(--text-mute);
+    line-height: 1.6;
+  }
+
+  .ceo-roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .ceo-role {
+    border-left: 2px solid var(--accent);
+    padding: 12px 20px;
+    background: var(--bg-2);
+    border-radius: 0 8px 8px 0;
+  }
+  .ceo-role .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+  .ceo-role .text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 4px;
+  }
+
+  /* Verba (Flagship product) */
+  .flagship-hero {
+    background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 56px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .flagship-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  }
+  .flagship-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .flagship-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    position: relative;
+  }
+  .flagship-name .ticker {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.4em;
+    background: var(--bg);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-left: 12px;
+    font-weight: 700;
+  }
+  .flagship-tagline {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 600px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .flagship-tag-pills {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .flagship-tag-pills .pill {
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .flagship-tag-pills .pill.cyan { color: var(--accent); border-color: rgba(0,217,255,0.3); }
+  .flagship-tag-pills .pill.amber { color: var(--amber); border-color: rgba(255,181,71,0.3); }
+  .flagship-tag-pills .pill.pink { color: var(--pink); border-color: rgba(255,85,114,0.3); }
+  .flagship-cta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: all 0.25s;
+    box-shadow: 0 8px 24px rgba(0,217,255,0.18);
+  }
+  .cta-primary:hover {
+    background: #7df9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,217,255,0.32);
+  }
+  .cta-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 0.5px;
+  }
+  .cta-url::before { content: '↗ '; color: var(--accent); }
+  .flagship-meta {
+    display: flex; flex-wrap: wrap; gap: 20px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  .flagship-meta div {
+    font-size: 13px;
+    color: var(--text-mute);
+  }
+  .flagship-meta strong { color: var(--text); font-weight: 600; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-bottom: 48px;
+  }
+  .feature {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s;
+  }
+  .feature:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .feature .icon {
+    width: 44px; height: 44px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .feature h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .feature p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* Token Economy */
+  .token-section {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .token-section::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,181,71,0.1) 0%, transparent 60%);
+  }
+  .token-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .token-symbol {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--amber) 0%, #ff9419 100%);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 900;
+    box-shadow: 0 0 30px rgba(255,181,71,0.4);
+  }
+  .token-info h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  .token-info .desc {
+    color: var(--text-soft);
+    font-size: 14px;
+  }
+
+  .token-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .stat {
+    border-left: 2px solid var(--amber);
+    padding-left: 16px;
+  }
+  .stat .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .stat .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .stat .value .unit {
+    font-size: 13px;
+    color: var(--text-mute);
+    margin-left: 4px;
+  }
+
+  .supply-bar {
+    background: var(--bg-3);
+    border-radius: 8px;
+    height: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .supply-bar .fill {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, var(--amber), #ff9419);
+    border-radius: 8px;
+  }
+  .supply-meta {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-mute);
+  }
+
+  .token-uses {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+  }
+  .use-tag {
+    background: var(--bg-3);
+    color: var(--amber);
+    border: 1px solid rgba(255,181,71,0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Products / On sale (Gumroad) */
+  .products {
+    background:
+      radial-gradient(ellipse at bottom left, rgba(255,181,71,0.05) 0%, transparent 50%),
+      var(--bg);
+    border-top: 1px solid var(--line);
+  }
+  .products-intro {
+    font-size: 17px;
+    color: var(--text-soft);
+    max-width: 760px;
+    margin-bottom: 48px;
+    line-height: 1.85;
+  }
+  .products-intro strong { color: var(--amber); font-weight: 600; }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .product-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,181,71,0.5);
+    box-shadow: 0 16px 40px rgba(255,181,71,0.08);
+  }
+  .product-cover {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background: var(--bg-3);
+    position: relative;
+    overflow: hidden;
+  }
+  .product-cover img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product-level {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: var(--amber);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 14px rgba(255,181,71,0.3);
+  }
+  .product-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .product-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .product-card p {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--amber);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1.5px;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+  .product-link:hover {
+    background: #ffc56e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255,181,71,0.3);
+  }
+  .products-meta {
+    margin-top: 32px;
+    padding: 22px 28px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px 28px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+  .products-meta .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+  }
+  .products-meta .value { color: var(--text); }
+  .products-meta .value.live { color: var(--amber); display: inline-flex; align-items: center; gap: 6px; }
+  .products-meta .value.live::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--amber);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--amber);
+  }
+  @media (max-width: 880px) { .products-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+
+  /* Other projects */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .project {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px;
+    transition: all 0.25s;
+  }
+  .project:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .project .ptag {
+    display: inline-block;
+    background: var(--bg-3);
+    color: var(--text-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .project h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .project p {
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Vision */
+  .vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .vision-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vision-card.fire {
+    background: linear-gradient(135deg, rgba(255,85,114,0.06) 0%, var(--bg-2) 100%);
+    border-color: rgba(255,85,114,0.25);
+  }
+  .vision-card.future {
+    background: linear-gradient(135deg, rgba(0,217,255,0.06) 0%, var(--bg-2) 100%);
+    border-color: rgba(0,217,255,0.25);
+  }
+  .vision-card h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .vision-card.fire h3 { color: var(--pink); }
+  .vision-card.future h3 { color: var(--accent); }
+  .vision-card .big {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  .vision-card p {
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .future-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .future-tags .tag { font-size: 12px; padding: 6px 12px; }
+
+  /* Contact */
+  .contact-card {
+    background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 64px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -150px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+  }
+  .contact-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(24px, 3.5vw, 36px);
+    margin-bottom: 18px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .contact-card p {
+    color: var(--text-soft);
+    margin-bottom: 36px;
+    font-size: 15px;
+    position: relative;
+  }
+  .contact-links {
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+    position: relative;
+  }
+  .contact-links a {
+    text-decoration: none;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+  }
+  .contact-links a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,217,255,0.2);
+  }
+  .contact-links a.primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .contact-links a.primary:hover {
+    background: #7df9ff;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-mute);
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+  }
+  footer .accent { color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .about-grid, .vision-grid { grid-template-columns: 1fr; gap: 32px; }
+    nav ul { gap: 14px; }
+    nav a { font-size: 12px; }
+    .flagship-hero, .token-section, .contact-card { padding: 32px 24px; }
+    section { padding: 70px 0; }
+    .flagship-name .ticker { display: block; margin: 12px 0 0; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+<nav>
+  <div class="container">
+    <div class="logo"><span class="dot"></span> Aki Labs<span class="accent">_</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#off-hours">Off-hours</a></li>
+      <li><a href="#labs">Aki Labs</a></li>
+      <li><a href="#verba">Verba</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-status">
+          <span class="pulse"></span>
+          <span>STATUS: Aki Labs · Verba(VRB) site live — closed beta recruiting</span>
+        </div>
+        <h1>
+          <span class="amber">教える人</span>から、<br>
+          <span class="accent">AIで教える仕組み</span>を<br>
+          作る人へ。
+        </h1>
+        <p class="hero-sub">
+          Aki Labs は、CEO と AI 社員で構成される 1人運営の AI ネイティブ企業。
+          第1号プロダクト「Verba (VRB)」は、Web3 と AI を組み合わせた、
+          Learn-to-Earn 型の次世代 JLPT 学習アプリです。
+        </p>
+        <div class="hero-tags">
+          <span class="tag cyan">Founder & CEO, Aki Labs</span>
+          <span class="tag amber">日本語教師（資格保有）</span>
+          <span class="tag">AI Native Company</span>
+          <span class="tag">Web3 / Token Economy</span>
+          <span class="tag">Solo Founder</span>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="label">Company</div>
+            <div class="value">Aki Labs</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Flagship</div>
+            <div class="value">Verba (VRB)</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Stage</div>
+            <div class="value">Closed Beta</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="label">Goal</div>
+            <div class="value">FIRE & AI Product Studio</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="aki-illustration.jpg" alt="Aki at Zenkoji Temple, Nagano" />
+        <div class="caption">📍 <span class="accent">善光寺</span> · 長野</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2 class="section-title">教育とテクノロジー、<br><span class="accent">両方</span>を知っている人間として。</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          こんにちは、<strong>Aki</strong>（CEO, Aki Labs）です。
+          現在はビル管理と iPhone修理の仕事をしながら、Aki Labs の経営とプロダクト開発を進めています。
+        </p>
+        <p>
+          もともと <strong>日本語教師の資格</strong> を取得し、非常勤として日本語学習者を教えていました。
+          教室で見えていた課題──伸び悩み、教材のミスマッチ、学習継続の難しさ──が、いま開発しているプロダクトの原点です。
+        </p>
+        <p>
+          アプリ開発を始めたきっかけは、iPhone 修理を教えてくれた <strong>ネクストレボリューション株式会社の代表</strong>。
+          「自分の手で形にする」という生き方に強く影響を受け、コードでプロダクトを作る世界へ踏み出しました。
+        </p>
+        <p>
+          <span class="highlight">教育者の視点</span>と <span class="highlight">エンジニアの視点</span>、
+          そして <span class="highlight">AI を社員として使い倒す経営者の視点</span>──
+          この 3つを 1人で持っている人間として、Aki Labs を育てていきます。
+        </p>
+      </div>
+      <div class="profile-card">
+        <h3>// PROFILE</h3>
+        <dl>
+          <div>
+            <dt>Name</dt>
+            <dd>Aki</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd>Founder & CEO, Aki Labs</dd>
+          </div>
+          <div>
+            <dt>Day Job</dt>
+            <dd>ビル管理 / iPhone修理</dd>
+          </div>
+          <div>
+            <dt>Certification</dt>
+            <dd>日本語教師資格</dd>
+          </div>
+          <div>
+            <dt>Mentor</dt>
+            <dd>ネクストレボリューション株式会社 代表</dd>
+          </div>
+          <div>
+            <dt>Mission</dt>
+            <dd>教師の経験を、コードで世界中の学習者へ。</dd>
+          </div>
+          <div>
+            <dt>North Star</dt>
+            <dd>FIRE × AI Product Studio</dd>
+          </div>
+          <div>
+            <dt>Off-hours</dt>
+            <dd>神社仏閣巡り / 写経</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="off-hours" class="off-hours">
+  <div class="container">
+    <div class="section-label" style="color: var(--amber);">Off-hours / 余白</div>
+    <h2 class="section-title">コードを書かない時間は、<br><span class="amber">石段</span>と<span class="amber">墨</span>と。</h2>
+    <p class="lab-intro" style="margin-bottom: 40px;">
+      AI と Web3 の話ばかりしているように見えて、休みの日は <strong style="color: var(--amber);">神社仏閣を巡る</strong> のが好き。
+      集中したい時は <strong style="color: var(--amber);">写経</strong> をして、思考を整える時間を取っています。
+      テクノロジーの速度の中で、<span class="highlight" style="color: var(--amber);">"待つ"</span> ための時間を持つこと。これも自分の働き方の一部です。
+    </p>
+    <div class="hobby-grid">
+      <div class="hobby-card">
+        <div class="hobby-icon">⛩</div>
+        <div class="hobby-tag">// HOBBY · 01</div>
+        <h3>神社仏閣巡り</h3>
+        <p>各地の神社・お寺を訪れ、土地の空気を感じる時間。直近では長野・善光寺へ。
+          歴史と建築、そこに集まる人の所作から学ぶことが多い。</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon">🖌</div>
+        <div class="hobby-tag">// HOBBY · 02</div>
+        <h3>写経</h3>
+        <p>集中力を高めたい時の儀式。一文字ずつ写すリズムで頭の中をクリアにする。
+          コードを書く前の「整え」としても効いている。</p>
+      </div>
+    </div>
+
+    <div class="gallery-header">
+      <div class="gallery-title">// Pilgrimage Log · 巡礼録</div>
+      <div class="gallery-count">06 photographs · 5 寺社 + 1 写経</div>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="temple-kawasaki-daishi.jpg" alt="川崎大師" loading="lazy" />
+        <figcaption>
+          <span class="cat">⛩ TEMPLE</span>
+          <span class="name">川崎大師</span>
+          <span class="loc">神奈川 · 川崎</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="temple-kiyomizu.jpg" alt="清水寺" loading="lazy" />
+        <figcaption>
+          <span class="cat">⛩ TEMPLE</span>
+          <span class="name">清水寺</span>
+          <span class="loc">京都 · 東山</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="temple-togakushi.jpg" alt="戸隠中社" loading="lazy" />
+        <figcaption>
+          <span class="cat">⛩ SHRINE</span>
+          <span class="name">戸隠神社 中社</span>
+          <span class="loc">長野 · 戸隠</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="temple-sumiyoshi.jpg" alt="福岡住吉神社" loading="lazy" />
+        <figcaption>
+          <span class="cat">⛩ SHRINE</span>
+          <span class="name">住吉神社</span>
+          <span class="loc">福岡 · 博多</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="temple-hokyoin.jpg" alt="京都嵯峨 宝筐院" loading="lazy" />
+        <figcaption>
+          <span class="cat">⛩ TEMPLE</span>
+          <span class="name">宝筐院</span>
+          <span class="loc">京都 · 嵯峨</span>
+        </figcaption>
+      </figure>
+      <figure class="gallery-item shakyo">
+        <img src="shakyo-hannya.jpg" alt="般若心経 写経" loading="lazy" />
+        <figcaption>
+          <span class="cat">🖌 SHAKYO</span>
+          <span class="name">般若心経</span>
+          <span class="loc">写経帳より</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="labs" class="lab">
+  <div class="container">
+    <div class="section-label">Aki Labs / Company</div>
+    <h2 class="section-title"><span class="accent">CEO 1人 + AI 5部署</span>で<br>運営する AIネイティブ企業。</h2>
+    <p class="lab-intro">
+      Aki Labs は、AI を「ツール」ではなく <strong>「社員」</strong> として組織に組み込む、AI ネイティブ企業です。
+      人間は CEO の Aki ひとりだけ。各 AI が部署として日々の業務を実行し、CEO は戦略・最終判断・AI のマネジメントに集中します。
+    </p>
+
+    <div class="org-chart">
+      <div class="org-ceo">
+        <div class="role">// CEO</div>
+        <div class="name">Aki</div>
+        <div class="sub">Strategy · Final Decision · AI Management</div>
+      </div>
+      <div class="org-line"></div>
+      <div class="org-departments">
+        <div class="ai-dept">
+          <div class="icon">📣</div>
+          <div class="name">Marketing AI</div>
+          <div class="role">マーケティング</div>
+          <div class="desc">SNS投稿 / ブログ記事 / 広告コピーの作成と運用。</div>
+        </div>
+        <div class="ai-dept">
+          <div class="icon">📚</div>
+          <div class="name">Content AI</div>
+          <div class="role">教材制作</div>
+          <div class="desc">JLPT問題、文法解説、クイズの自動生成。</div>
+        </div>
+        <div class="ai-dept">
+          <div class="icon">💬</div>
+          <div class="name">Community AI</div>
+          <div class="role">ユーザーサポート</div>
+          <div class="desc">コミュニティ対応、FAQ、ユーザーからの質問対応。</div>
+        </div>
+        <div class="ai-dept">
+          <div class="icon">📊</div>
+          <div class="name">Data AI</div>
+          <div class="role">分析担当</div>
+          <div class="desc">ユーザーデータ分析、日次レポート、KPI追跡。</div>
+        </div>
+        <div class="ai-dept">
+          <div class="icon">🛠️</div>
+          <div class="name">Product AI</div>
+          <div class="role">プロダクト改善</div>
+          <div class="desc">アプリ改善案、新機能提案、UX改善。</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family: 'JetBrains Mono', monospace; color: var(--text-mute); font-size: 12px; letter-spacing: 2px; margin-bottom: 20px;">// CEO ROLES</h3>
+    <div class="ceo-roles">
+      <div class="ceo-role">
+        <div class="num">01 / STRATEGY</div>
+        <div class="text">戦略決定</div>
+      </div>
+      <div class="ceo-role">
+        <div class="num">02 / DECISION</div>
+        <div class="text">最終判断</div>
+      </div>
+      <div class="ceo-role">
+        <div class="num">03 / MANAGEMENT</div>
+        <div class="text">AIのマネジメント</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="verba">
+  <div class="container">
+    <div class="section-label">Flagship Product</div>
+    <h2 class="section-title">第1号プロダクト：<br><span class="accent">Learn-to-Earn</span> な JLPT 学習アプリ。</h2>
+
+    <div class="flagship-hero">
+      <div class="flagship-badge">// SITE LIVE</div>
+      <h3 class="flagship-name">Verba<span class="ticker">$VRB</span></h3>
+      <div class="flagship-tag-pills">
+        <span class="pill amber">Learn Japanese</span>
+        <span class="pill cyan">×&nbsp;Web3</span>
+        <span class="pill pink">×&nbsp;AI</span>
+      </div>
+      <p class="flagship-tagline">
+        次世代の JLPT 学習アプリ。AI が学習をサポートし、教師が問題を投稿し、
+        正解者にはトークンが配られる──Learn-to-Earn なエコシステム。
+      </p>
+      <div class="flagship-cta">
+        <a class="cta-primary" href="https://verba-learning-app.vercel.app/" target="_blank" rel="noopener">VISIT VERBA SITE →</a>
+        <span class="cta-url">verba-learning-app.vercel.app</span>
+      </div>
+      <div class="flagship-meta">
+        <div><strong>Stage</strong> · Site Live / Closed Beta</div>
+        <div><strong>Target</strong> · 世界中の日本語学習者（N5〜N1）</div>
+        <div><strong>LP</strong> · English / PayPal 決済導線</div>
+        <div><strong>Channels</strong> · Bluesky / Facebook</div>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="icon">📝</div>
+        <h4>JLPT 対策クイズ</h4>
+        <p>N5〜N1 まで、レベル別に網羅した本格的な JLPT 対策クイズ。</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🤖</div>
+        <h4>AI 学習支援</h4>
+        <p>AIが学習者の弱点を分析し、最適な問題と解説を提案。</p>
+      </div>
+      <div class="feature">
+        <div class="icon">👨‍🏫</div>
+        <h4>教師による問題投稿</h4>
+        <p>世界中の日本語教師が問題を投稿。プラットフォーム化された教材生態系。</p>
+      </div>
+      <div class="feature">
+        <div class="icon">💎</div>
+        <h4>採用報酬システム</h4>
+        <p>投稿された問題が採用された教師に、$VRB トークンを報酬として配布。</p>
+      </div>
+    </div>
+
+    <div class="token-section">
+      <div class="token-header">
+        <div class="token-symbol">VRB</div>
+        <div class="token-info">
+          <h3>VRB Token Economy</h3>
+          <div class="desc">Ethereum チェーン上で発行される Verba のユーティリティトークン。</div>
+        </div>
+      </div>
+
+      <div class="token-stats">
+        <div class="stat">
+          <div class="label">CHAIN</div>
+          <div class="value">Ethereum</div>
+        </div>
+        <div class="stat">
+          <div class="label">MAX SUPPLY</div>
+          <div class="value">100,000,000<span class="unit">VRB</span></div>
+        </div>
+        <div class="stat">
+          <div class="label">CIRCULATING</div>
+          <div class="value">50,000,000<span class="unit">VRB</span></div>
+        </div>
+        <div class="stat">
+          <div class="label">REMAINING</div>
+          <div class="value">50,000,000<span class="unit">VRB</span></div>
+        </div>
+      </div>
+
+      <div class="supply-bar"><div class="fill"></div></div>
+      <div class="supply-meta">
+        <span>50% Issued</span>
+        <span>50% Reserved for future issuance</span>
+      </div>
+
+      <div class="token-uses">
+        <span class="use-tag">クイズ正解報酬</span>
+        <span class="use-tag">教師への報酬</span>
+        <span class="use-tag">コミュニティ参加インセンティブ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="container">
+    <div class="section-label" style="color: var(--amber);">// Products · On Sale</div>
+    <h2 class="section-title">既に世に出している、<br><span class="amber">JLPT学習教材</span>シリーズ。</h2>
+    <p class="products-intro">
+      Verba（アプリ）と並行して走らせている、<strong>"AkiLads"</strong> ブランドの JLPT 学習教材シリーズ。
+      日本語教師としての知見をそのまま教材に落とし込み、<strong>Gumroad で販売中</strong>。
+      「アイデア」ではなく「すでに買える形になっている」プロダクトです。
+    </p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-cover">
+          <img src="n5-cover.jpg" alt="AkiLads JLPT N5 教材カバー" />
+          <div class="product-level">N5</div>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">// JLPT · BEGINNER</div>
+          <h3>AkiLads JLPT N5</h3>
+          <p>日本語学習を始めたばかりの人へ。最初につまずきやすいポイントを、教師の視点で網羅した N5 対策教材。</p>
+          <a class="product-link" href="https://akist3956.gumroad.com/l/yyrma" target="_blank" rel="noopener">BUY ON GUMROAD →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-cover">
+          <img src="n4-cover.jpg" alt="AkiLads JLPT N4 教材カバー" />
+          <div class="product-level">N4</div>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">// JLPT · ELEMENTARY</div>
+          <h3>AkiLads JLPT N4</h3>
+          <p>基本的な日本語を運用できるレベルへ。文法・語彙・読解をバランスよく強化する N4 対策教材。</p>
+          <a class="product-link" href="https://akist3956.gumroad.com/l/nrflnx" target="_blank" rel="noopener">BUY ON GUMROAD →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-cover">
+          <img src="n3-cover.jpg" alt="AkiLads JLPT N3 教材カバー" />
+          <div class="product-level">N3</div>
+        </div>
+        <div class="product-body">
+          <div class="product-tag">// JLPT · INTERMEDIATE</div>
+          <h3>AkiLads JLPT N3</h3>
+          <p>中級レベルの壁を越えるための教材。日常会話を超えた表現と読解力を重点的にトレーニング。</p>
+          <a class="product-link" href="https://akist3956.gumroad.com/l/hjhqpn" target="_blank" rel="noopener">BUY ON GUMROAD →</a>
+        </div>
+      </div>
+    </div>
+    <div class="products-meta">
+      <span class="label">PLATFORM</span>
+      <span class="value">Gumroad</span>
+      <span class="label">BRAND</span>
+      <span class="value">AkiLads — JLPT Series by Aki Labs</span>
+      <span class="label">STATUS</span>
+      <span class="value live">On Sale</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Other Projects</div>
+    <h2 class="section-title">これまでに作ってきたもの</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <span class="ptag">Built · FinTech</span>
+        <h3>FX・株 チャート分析アプリ</h3>
+        <p>FX や株式のチャートを分析するためのツール。投資判断をサポートする指標を可視化。</p>
+      </div>
+      <div class="project">
+        <span class="ptag">Built · Data</span>
+        <h3>ナンバーズ予測アプリ</h3>
+        <p>ナンバーズの過去データから次の番号を予測。確率・データ分析の練習も兼ねたプロジェクト。</p>
+      </div>
+      <div class="project">
+        <span class="ptag">Side · Education</span>
+        <h3>非常勤の日本語教師</h3>
+        <p>日本語教師の資格を取得し、教室で外国人学習者を担当。Verba と JLPT 教材の原点。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="container">
+    <div class="section-label">Vision</div>
+    <h2 class="section-title">Verba の先にある、<br>もう少し<span class="accent">大きな絵</span>。</h2>
+    <div class="vision-grid">
+      <div class="vision-card future">
+        <h3>// AI PRODUCT STUDIO</h3>
+        <div class="big">複数の AI プロダクトを<br>世に送り出す会社へ。</div>
+        <p>
+          Verba を成功させたあと、Aki Labs は AI を中心としたプロダクトを継続的に開発・運営するスタジオへ進化させていきます。
+        </p>
+        <div class="future-tags">
+          <span class="tag cyan">教育 AI</span>
+          <span class="tag cyan">AI アプリケーション</span>
+          <span class="tag cyan">Web3 サービス</span>
+          <span class="tag cyan">その他 AI プロダクト</span>
+        </div>
+      </div>
+      <div class="vision-card fire">
+        <h3>// PERSONAL · FIRE</h3>
+        <div class="big">時間と意思決定を、<br>自分の手に取り戻す。</div>
+        <p>
+          複数のプロダクト運営から得られる収益と資産形成によって、近い将来 <strong style="color:var(--pink);">FIRE</strong> を実現する。
+          残りの時間は「作りたいもの」と「教えたいこと」だけに使う。それが個人としての到達点です。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h3>Verba (VRB) — Closed Beta テスター募集中</h3>
+      <p>
+        日本語学習者・日本語教師・Web3 / AI に興味がある方、<br>
+        どんな入り口でも歓迎です。Aki Labs は、いま動き出しています。
+      </p>
+      <div class="contact-links">
+        <a class="primary" href="mailto:aki.t901@gmail.com">EMAIL</a>
+        <a href="https://bsky.app/profile/aki-t901.bsky.social" target="_blank" rel="noopener">BLUESKY ↗</a>
+        <a href="https://www.facebook.com/share/1CmZmt3Hu3/?mibextid=wwXIfr" target="_blank" rel="noopener">FACEBOOK ↗</a>
+        <a class="primary" href="https://verba-learning-app.vercel.app/" target="_blank" rel="noopener">VERBA SITE ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 <span class="accent">Aki Labs</span> · Built by Aki + AI · Made with care.
+  </div>
+</footer>
+
+</main>
+
+</body>
+</html>
