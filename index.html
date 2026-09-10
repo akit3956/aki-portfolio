@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aki — Founder & CEO, Aki Labs</title>
 <meta name="description" content="教える人から、AIで教える仕組みを作る人へ。日本語教師の経験を、コードで世界中の学習者に届ける Aki Labs の創業者ポートフォリオ。" />
-<meta name="theme-color" content="#0a0e1a" />
+<meta name="theme-color" content="#faf7f2" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" href="logo/akilabs_mark_32.png" />
+<link rel="apple-touch-icon" href="logo/akilabs_mark_180.png" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Aki — Founder & CEO, Aki Labs" />
 <meta property="og:description" content="教える人から、AIで教える仕組みを作る人へ。日本語教師の経験を、コードで世界中の学習者に届ける Aki Labs の創業者ポートフォリオ。" />
-<meta property="og:image" content="aki-illustration.jpg" />
+<meta property="og:image" content="daikoku-hero.png" />
 <meta property="og:site_name" content="Aki Labs" />
 <meta property="og:locale" content="ja_JP" />
 
@@ -22,26 +23,26 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Aki — Founder & CEO, Aki Labs" />
 <meta name="twitter:description" content="教える人から、AIで教える仕組みを作る人へ。" />
-<meta name="twitter:image" content="aki-illustration.jpg" />
+<meta name="twitter:image" content="daikoku-hero.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0e1a;
-    --bg-2: #131826;
-    --bg-3: #1c2333;
-    --bg-glass: rgba(20, 26, 42, 0.7);
-    --accent: #00d9ff;
-    --accent-glow: rgba(0, 217, 255, 0.18);
-    --amber: #ffb547;
-    --pink: #ff5572;
-    --text: #e8ecf4;
-    --text-soft: #a4adc4;
-    --text-mute: #6b7494;
-    --line: rgba(255, 255, 255, 0.08);
-    --line-strong: rgba(255, 255, 255, 0.16);
+    --bg: #faf7f2;
+    --bg-2: #f3ede4;
+    --bg-3: #ede5d8;
+    --bg-glass: rgba(250, 247, 242, 0.75);
+    --accent: #0c7f8c;
+    --accent-glow: rgba(12, 127, 140, 0.14);
+    --amber: #b45309;
+    --pink: #c2255c;
+    --text: #241f18;
+    --text-soft: #5a5347;
+    --text-mute: #8a8272;
+    --line: rgba(36, 31, 24, 0.1);
+    --line-strong: rgba(36, 31, 24, 0.18);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -84,7 +85,7 @@
   /* Nav */
   nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(10, 14, 26, 0.85);
+    background: rgba(250, 247, 242, 0.85);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--line);
   }
@@ -114,15 +115,17 @@
 
   /* Hero */
   .hero { padding: 140px 0 120px; position: relative; }
+  .hero .container { max-width: 1320px; }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 40px;
+    align-items: start;
   }
   .hero-portrait {
     position: relative;
-    aspect-ratio: 3 / 4;
+    margin-top: 6px;
+    aspect-ratio: 4 / 5;
     background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
     border: 1px solid var(--line-strong);
     border-radius: 20px;
@@ -159,7 +162,7 @@
   .hero-portrait .caption {
     position: absolute;
     bottom: 14px; left: 14px;
-    background: rgba(10,14,26,0.85);
+    background: rgba(250,247,242,0.85);
     backdrop-filter: blur(8px);
     border: 1px solid var(--line);
     padding: 6px 12px;
@@ -172,7 +175,13 @@
   .hero-portrait .caption .accent { color: var(--amber); }
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-    .hero-portrait { max-width: 380px; margin: 0 auto; }
+    .hero-portrait {
+      max-width: none;
+      width: calc(100% + 64px);
+      margin: 0 -32px;
+      border-radius: 0;
+      aspect-ratio: 3 / 4;
+    }
   }
   .hero-status {
     display: inline-flex; align-items: center; gap: 10px;
@@ -1196,7 +1205,11 @@
 
 <nav>
   <div class="container">
-    <div class="logo"><span class="dot"></span> Aki Labs<span class="accent">_</span></div>
+    <div class="logo">
+      <img src="logo/akilabs_logo_600w.png"
+           srcset="logo/akilabs_logo_600w.png 1x, logo/akilabs_logo_1200w.png 2x"
+           alt="Aki Labs" style="display: block; height: 38px; width: auto;" />
+    </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#off-hours">Off-hours</a></li>
@@ -1255,8 +1268,7 @@
         </div>
       </div>
       <div class="hero-portrait">
-        <img src="aki-illustration.jpg" alt="Aki at Zenkoji Temple, Nagano" />
-        <div class="caption">📍 <span class="accent">善光寺</span> · 長野</div>
+        <img src="daikoku-hero.png" alt="大黒天様との出会い - Aki Labs" />
       </div>
     </div>
   </div>
