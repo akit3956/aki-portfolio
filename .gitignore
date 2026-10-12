@@ -7,5 +7,12 @@
 *.swp
 *~
 
+# Build & Dependencies
+node_modules/
+dist/
+
+# Large unused raw images
+daikoku_*.png
+
 # OS / system
 Thumbs.db
